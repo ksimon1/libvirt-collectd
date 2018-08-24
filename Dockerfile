@@ -8,4 +8,7 @@ RUN \
     collectd collectd-write_prometheus && \
   dnf clean all
 
+ADD configs/collectd.conf /etc/collectd.conf
+ADD configs/collectd.d /etc/collectd.d
+
 CMD ["/libvirtd.sh"]
