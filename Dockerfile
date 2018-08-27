@@ -5,12 +5,11 @@ ENV container docker
 
 RUN \
   dnf install -y \
-    collectd collectd-write_prometheus && \
+    collectd collectd-virt collectd-write_prometheus && \
   dnf clean all
 
 COPY config/collectd.conf /etc/collectd.conf
-COPY config/processes.conf /etc/collectd.d/processes.conf
-COPY config/write_prometheus.conf /etc/collectd.d/write_prometheus.conf
+COPY config/collectd.d/*.conf /etc/collectd.d/
 
 EXPOSE 9103
 
