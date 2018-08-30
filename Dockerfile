@@ -11,6 +11,6 @@ RUN \
 COPY config/collectd.conf /etc/collectd.conf
 COPY config/collectd.d/*.conf /etc/collectd.d/
 
-EXPOSE 9103
+EXPOSE 9090
 
 CMD ["/libvirtd.sh"]
