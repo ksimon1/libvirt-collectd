@@ -7,3 +7,6 @@ build:
 
 clean:
 	-rm -rf _output
+
+docker: build
+	docker build .

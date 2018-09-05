@@ -1,0 +1,3 @@
+#!/bin/sh
+/bin/startcollectd.sh - start - start
+exec /usr/sbin/libvirtd.bin $@ 
