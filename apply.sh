@@ -12,4 +12,4 @@ $TOOL create -f manifests/monitoring-namespace.yaml
 $TOOL create -f manifests/prometheus-config.yaml
 $TOOL create -f manifests/prometheus-deployment.yaml
 $TOOL create -f manifests/prometheus-service.yaml
-$TOOL create -f manifests/node-exporter-daemonset.yml
+$TOOL create -f manifests/node-exporter-daemonset.yaml
