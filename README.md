@@ -9,7 +9,8 @@ through collectd.
 1. Grab kubevirt sources. Supported version is
    - k8s provider: 0.7.z
    - ocp provider: 0.8.z
-   The last tested version is:
+
+    The last tested version is:
    - k8s provider: 0.7.0
    - ocp provider: 0.8.0-alpha.2
 2. Apply [this patch](https://github.com/fromanirh/kubevirt/commit/3292207e65294bbd630a9be138c69cf2ee2cf37b). Now your kubevirt installation support pod metrics.
