@@ -20,4 +20,21 @@ through collectd.
 1. if you run on top of kubevirt development cluster, you most likely to need this last step to indeed access your prometheus server:
 
    `port-forward -n <prometheus_pod_namespace>  <prometheus_pod_name> 36000:9090`
-   
+
+2. Setting up the kubevirt cluster and its monitoring requires running  commands in well defined folders (example: kubevirt's ./cluster/kubectl.sh, or applying the manifests bundled here).
+   To help doing this, you can follow those steps
+   - use the provided `make-apply.sh`. Run it with the parameters fit to your cluster from a checkout of this repository. The output is *another* script that you can run in the kubevirt top-level directory.
+   Example:
+   ```
+     cd $WORKDIR/libvirt-collectd
+     ./make-apply.sh ocp ./cluster/kubectl.sh > /tmp/apply.sh
+     cd $WORKDIR/kubevirt
+     # make sure you have the patches applied!
+     export KUBEVIRT_PROVIDER=os-3.10.0
+     make
+     make cluster-up
+     make cluster-sync
+     sh /tmp/apply.sh
+   ```
+
+   Now your cluster is ready!
